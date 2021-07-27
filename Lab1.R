@@ -23,6 +23,10 @@ library(fpc)
 library(NbClust)
 library(factoextra)
 library(rpart)
+library(rela)
+library(psych)
+library(FactoMineR)
+library(arules)
 
 # Analisis Exploratorio
 train<- read.csv("train.csv", stringsAsFactors = FALSE)
@@ -110,3 +114,30 @@ plot(x = table(train$YearRemodAdd), main = "Gráfica de YearRemodAdd",
      xlab = "Valor de YearRemodAdd", ylab = "Frecuencia", 
      col = c("red", "blue", "grey", "purple"))
 
+
+
+pafDatos$KMO
+pafDatos$Bartlett
+summary(pafDatos)
+
+cor(train[,-1],use = "pairwise.complete.obs")
+
+compPrinc<-prcomp(train[,1:14], scale = T)
+compPrinc
+summary(compPrinc)
+
+compPrincPCA<-PCA(train[,-1],ncp=ncol(train[,-1]), scale.unit = T)
+
+summary(compPrincPCA)
+
+
+setCualitativa<-(datos[,c("OverallQual","YearBuilt","GarageYrBlt","MoSold","YearRemodAdd")])
+dataframe_train<-as(setCualitativa,"transactions")
+itemsets<-apriori(data=dataframe_train, parameter = list(
+  minlen=2,
+  target="rules",
+  confidence=0.85
+))
+
+summary(itemsets)
+inspect(itemsets)
