@@ -78,7 +78,7 @@ hist(train$YearRemodAdd, main="Variable YearRemodAdd")
 hist(train$SalePrice, main="Variable SalePrice")
 
 #Correlacion
-matriz_cor <- cor(trainFilteredData[,-1],use = "pairwise.complete.obs")
+matriz_cor <- cor(train[,-1],use = "pairwise.complete.obs")
 matriz_cor
 corrplot(matriz_cor) #mapa de calor
 
