@@ -80,33 +80,33 @@ corrplot(matriz_cor) #mapa de calor
 
 #Tablas de frecuencias absolutas, proporción y barras.
 
-View(table(trainFilteredData$MoSold))
-View(table(trainFilteredData$MoSold)/length(trainFilteredData$MoSold))
-plot(x = table(trainFilteredData$MoSold), main = "Gráfica de MoSold",
+View(table(train$MoSold))
+View(table(train$MoSold)/length(train$MoSold))
+plot(x = table(train$MoSold), main = "Gráfica de MoSold",
      xlab = "Valor de MoSold", ylab = "Frecuencia", 
      col = c("red", "blue", "grey", "purple"))
 
-View(table(trainFilteredData$OverallQual))
-View(table(trainFilteredData$OverallQual)/length(trainFilteredData$OverallQual))
-plot(x = table(trainFilteredData$OverallQual), main = "Gráfica de OverallQual",
+View(table(train$OverallQual))
+View(table(train$OverallQual)/length(train$OverallQual))
+plot(x = table(train$OverallQual), main = "Gráfica de OverallQual",
      xlab = "Valor de OverallQual", ylab = "Frecuencia", 
      col = c("red", "blue", "grey", "purple"))
 
-View(table(trainFilteredData$YearBuilt))
-View(table(trainFilteredData$YearBuilt)/length(trainFilteredData$YearBuilt))
-plot(x = table(trainFilteredData$YearBuilt), main = "Gráfica de YearBuilt",
+View(table(train$YearBuilt))
+View(table(train$YearBuilt)/length(train$YearBuilt))
+plot(x = table(train$YearBuilt), main = "Gráfica de YearBuilt",
      xlab = "Valor de YearBuilt", ylab = "Frecuencia", 
      col = c("red", "blue", "grey", "purple"))
 
-View(table(trainFilteredData$GarageYrBlt))
-View(table(trainFilteredData$GarageYrBlt)/length(trainFilteredData$GarageYrBlt))
-plot(x = table(trainFilteredData$GarageYrBlt), main = "Gráfica de GarageYrBlt",
+View(table(train$GarageYrBlt))
+View(table(train$GarageYrBlt)/length(train$GarageYrBlt))
+plot(x = table(train$GarageYrBlt), main = "Gráfica de GarageYrBlt",
      xlab = "Valor de GarageYrBlt", ylab = "Frecuencia", 
      col = c("red", "blue", "grey", "purple"))
 
-View(table(trainFilteredData$YearRemodAdd))
-View(table(trainFilteredData$YearRemodAdd)/length(trainFilteredData$YearRemodAdd))
-plot(x = table(trainFilteredData$YearRemodAdd), main = "Gráfica de YearRemodAdd",
+View(table(train$YearRemodAdd))
+View(table(train$YearRemodAdd)/length(train$YearRemodAdd))
+plot(x = table(train$YearRemodAdd), main = "Gráfica de YearRemodAdd",
      xlab = "Valor de YearRemodAdd", ylab = "Frecuencia", 
      col = c("red", "blue", "grey", "purple"))
 
