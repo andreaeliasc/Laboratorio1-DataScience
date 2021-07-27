@@ -72,3 +72,41 @@ hist(train$GarageArea, main="Variable GarageArea")
 hist(train$MoSold, main="Variable MoSold")
 hist(train$YearRemodAdd, main="Variable YearRemodAdd")
 hist(train$SalePrice, main="Variable SalePrice")
+
+#Correlacion
+matriz_cor <- cor(trainFilteredData[,-1],use = "pairwise.complete.obs")
+matriz_cor
+corrplot(matriz_cor) #mapa de calor
+
+#Tablas de frecuencias absolutas, proporción y barras.
+
+View(table(trainFilteredData$MoSold))
+View(table(trainFilteredData$MoSold)/length(trainFilteredData$MoSold))
+plot(x = table(trainFilteredData$MoSold), main = "Gráfica de MoSold",
+     xlab = "Valor de MoSold", ylab = "Frecuencia", 
+     col = c("red", "blue", "grey", "purple"))
+
+View(table(trainFilteredData$OverallQual))
+View(table(trainFilteredData$OverallQual)/length(trainFilteredData$OverallQual))
+plot(x = table(trainFilteredData$OverallQual), main = "Gráfica de OverallQual",
+     xlab = "Valor de OverallQual", ylab = "Frecuencia", 
+     col = c("red", "blue", "grey", "purple"))
+
+View(table(trainFilteredData$YearBuilt))
+View(table(trainFilteredData$YearBuilt)/length(trainFilteredData$YearBuilt))
+plot(x = table(trainFilteredData$YearBuilt), main = "Gráfica de YearBuilt",
+     xlab = "Valor de YearBuilt", ylab = "Frecuencia", 
+     col = c("red", "blue", "grey", "purple"))
+
+View(table(trainFilteredData$GarageYrBlt))
+View(table(trainFilteredData$GarageYrBlt)/length(trainFilteredData$GarageYrBlt))
+plot(x = table(trainFilteredData$GarageYrBlt), main = "Gráfica de GarageYrBlt",
+     xlab = "Valor de GarageYrBlt", ylab = "Frecuencia", 
+     col = c("red", "blue", "grey", "purple"))
+
+View(table(trainFilteredData$YearRemodAdd))
+View(table(trainFilteredData$YearRemodAdd)/length(trainFilteredData$YearRemodAdd))
+plot(x = table(trainFilteredData$YearRemodAdd), main = "Gráfica de YearRemodAdd",
+     xlab = "Valor de YearRemodAdd", ylab = "Frecuencia", 
+     col = c("red", "blue", "grey", "purple"))
+
